@@ -35,13 +35,12 @@ typedef void (^DOUSimpleHTTPRequestDidReceiveDataBlock)(NSData *data);
 
 @property (nonatomic, readonly) NSData *responseData;
 @property (nonatomic, readonly) NSString *responseString;
+@property (nonatomic, readonly) NSInteger statusCode;
+@property (nonatomic, readonly) NSUInteger downloadSpeed;
 
 @property (nonatomic, readonly) NSDictionary *responseHeaders;
 @property (nonatomic, readonly) NSUInteger responseContentLength;
-@property (nonatomic, readonly) NSInteger statusCode;
-@property (nonatomic, readonly) NSString *statusMessage;
 
-@property (nonatomic, readonly) NSUInteger downloadSpeed;
 @property (nonatomic, readonly, getter=isFailed) BOOL failed;
 
 @property (copy) DOUSimpleHTTPRequestCompletedBlock completedBlock;

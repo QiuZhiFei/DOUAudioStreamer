@@ -27,3 +27,17 @@ build/
 *~
 *.dat
 *.dep
+
+.DS_Store
+build
+*.mode1v3
+*.mode2v3
+*.pbxuser
+project.xcworkspace
+xcuserdata
+*.xccheckout
+*.xcscmblueprint
+.svn
+.idea
+Pods
+
