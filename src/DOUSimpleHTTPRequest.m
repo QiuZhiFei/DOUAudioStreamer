@@ -135,16 +135,20 @@
                                 } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                                   
                                   typeof(self) __strong sself = wself;
-                                  if (error) {
-                                    sself->_failed = YES;
-                                    NSLog(@"DOUAudioStreamer error == %@", error.description);
+                                  
+                                  if (sself) {
+                                    if (error) {
+                                      sself->_failed = YES;
+                                      NSLog(@"DOUAudioStreamer error == %@", error.description);
+                                    }
+                                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                                      sself->_statusCode = [(NSHTTPURLResponse *)response statusCode];
+                                    }
+                                    if (sself.completedBlock) {
+                                      sself.completedBlock();
+                                    }
                                   }
-                                  if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-                                    sself->_statusCode = [(NSHTTPURLResponse *)response statusCode];
-                                  }
-                                  if (sself.completedBlock) {
-                                    sself.completedBlock();
-                                  }
+                                  
                                 }];
   }
   
