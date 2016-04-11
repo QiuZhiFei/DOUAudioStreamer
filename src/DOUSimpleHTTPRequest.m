@@ -49,6 +49,7 @@
   
   AFHTTPSessionManager *_sessionManager;
   NSURLSessionDataTask *_task;
+  NSURL *_url;
 }
 @end
 
@@ -85,6 +86,7 @@
   if (self) {
     _userAgent = [[self class] defaultUserAgent];
     _timeoutInterval = [[self class] defaultTimeoutInterval];
+    _url = url;
     
     typeof(self) __weak wself = self;
     
@@ -108,48 +110,34 @@
       return NSURLSessionResponseAllow;
     }];
 
-    NSMutableURLRequest *request = [_sessionManager.requestSerializer requestWithMethod:@"GET"
-                                                                              URLString:url.absoluteString
-                                                                             parameters:nil
-                                                                                  error:NULL];
-    
-    
-//    [_sessionManager.requestSerializer setValue:@"audio/mpeg" forHTTPHeaderField:@"Accept"];
-    
-//    NSMutableSet *types = [NSMutableSet setWithSet:_sessionManager.responseSerializer.acceptableContentTypes];
-//    [types addObject:@"audio/mpeg"];
-    
-//    _sessionManager.responseSerializer.acceptableContentTypes = types;
-//    _sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"audio/mpeg", nil];
-    
-    
-//    [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    
-    
-    _task = [_sessionManager dataTaskWithRequest:request
-                                  uploadProgress:NULL
-                                downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
-                                  if (wself.progressBlock) {
-                                    wself.progressBlock(downloadProgress.fractionCompleted);
-                                  }
-                                } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                                  
-                                  typeof(self) __strong sself = wself;
-                                  
-                                  if (sself) {
-                                    if (error) {
-                                      sself->_failed = YES;
-                                      NSLog(@"DOUAudioStreamer error == %@", error.description);
-                                    }
-                                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-                                      sself->_statusCode = [(NSHTTPURLResponse *)response statusCode];
-                                    }
-                                    if (sself.completedBlock) {
-                                      sself.completedBlock();
-                                    }
-                                  }
-                                  
-                                }];
+//    NSMutableURLRequest *request = [_sessionManager.requestSerializer requestWithMethod:@"GET"
+//                                                                              URLString:url.absoluteString
+//                                                                             parameters:nil
+//                                                                                  error:NULL];
+//    _task = [_sessionManager dataTaskWithRequest:request
+//                                  uploadProgress:NULL
+//                                downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+//                                  if (wself.progressBlock) {
+//                                    wself.progressBlock(downloadProgress.fractionCompleted);
+//                                  }
+//                                } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+//                                  
+//                                  typeof(self) __strong sself = wself;
+//                                  
+//                                  if (sself) {
+//                                    if (error) {
+//                                      sself->_failed = YES;
+//                                      NSLog(@"DOUAudioStreamer error == %@  \n %@", error.description, response);
+//                                    }
+//                                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+//                                      sself->_statusCode = [(NSHTTPURLResponse *)response statusCode];
+//                                    }
+//                                    if (sself.completedBlock) {
+//                                      sself.completedBlock();
+//                                    }
+//                                  }
+//                                  
+//                                }];
   }
   
   return self;
@@ -162,6 +150,36 @@
   if (_host != nil) {
     [_sessionManager.requestSerializer setValue:_host forHTTPHeaderField:@"Host"];
   }
+  NSMutableURLRequest *request = [_sessionManager.requestSerializer requestWithMethod:@"GET"
+                                                                            URLString:_url.absoluteString
+                                                                           parameters:nil
+                                                                                error:NULL];
+  [request setValue:@"mr7.doubanio.com" forHTTPHeaderField:@"Host"];
+  typeof(self) __weak wself = self;
+  _task = [_sessionManager dataTaskWithRequest:request
+                                uploadProgress:NULL
+                              downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+                                if (wself.progressBlock) {
+                                  wself.progressBlock(downloadProgress.fractionCompleted);
+                                }
+                              } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                                
+                                typeof(self) __strong sself = wself;
+                                
+                                if (sself) {
+                                  if (error) {
+                                    sself->_failed = YES;
+                                    NSLog(@"DOUAudioStreamer error == %@  \n %@", error.description, response);
+                                  }
+                                  if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                                    sself->_statusCode = [(NSHTTPURLResponse *)response statusCode];
+                                  }
+                                  if (sself.completedBlock) {
+                                    sself.completedBlock();
+                                  }
+                                }
+                                
+                              }];
   _startedTime = CFAbsoluteTimeGetCurrent();
   [_task resume];
 }
