@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18677514519590170049A1AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E867FD47114F56D107B5D362 /* libPods.a */; };
 		D400E947171BF13F00BE7F37 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D400E946171BF13F00BE7F37 /* Accelerate.framework */; };
 		D40A255D17694680000B98AA /* DOUAudioAnalyzer+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = D40A255C17694680000B98AA /* DOUAudioAnalyzer+Default.m */; };
 		D40A4D1717AB83C400D0305F /* DOUAudioStreamer+Options.m in Sources */ = {isa = PBXBuildFile; fileRef = D40A4D1617AB83C400D0305F /* DOUAudioStreamer+Options.m */; };
@@ -48,11 +47,13 @@
 		D4F5B29618A5F6B90063865C /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F5B29518A5F6B90063865C /* PlayerViewController.m */; };
 		D4F5B29818A605A70063865C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F5B29718A605A70063865C /* AVFoundation.framework */; };
 		D4F5B29A18A605AB0063865C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F5B29918A605AB0063865C /* MediaPlayer.framework */; };
+		F91BDEE5672E2D7CFAF432EE /* libPods-DOUASDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2204C16CF1058B3BA26C03CF /* libPods-DOUASDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		202071D0A5CC7425BB1F458B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		73C378FE9FD40A889C92E4B9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		07B6D4942415BA6769D42D48 /* Pods-DOUASDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DOUASDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DOUASDemo/Pods-DOUASDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2204C16CF1058B3BA26C03CF /* libPods-DOUASDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DOUASDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67249840147EDE8F074B1FF6 /* Pods-DOUASDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DOUASDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DOUASDemo/Pods-DOUASDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D400E946171BF13F00BE7F37 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		D40A255B17694680000B98AA /* DOUAudioAnalyzer+Default.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DOUAudioAnalyzer+Default.h"; sourceTree = "<group>"; };
 		D40A255C17694680000B98AA /* DOUAudioAnalyzer+Default.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DOUAudioAnalyzer+Default.m"; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		D4F5B29518A5F6B90063865C /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		D4F5B29718A605A70063865C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D4F5B29918A605AB0063865C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		E867FD47114F56D107B5D362 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,13 +143,22 @@
 				D4C38923171B9D87009D6124 /* UIKit.framework in Frameworks */,
 				D4C38925171B9D87009D6124 /* Foundation.framework in Frameworks */,
 				D4C38927171B9D87009D6124 /* CoreGraphics.framework in Frameworks */,
-				18677514519590170049A1AB /* libPods.a in Frameworks */,
+				F91BDEE5672E2D7CFAF432EE /* libPods-DOUASDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87DBB5999BA7911BBC9470DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67249840147EDE8F074B1FF6 /* Pods-DOUASDemo.debug.xcconfig */,
+				07B6D4942415BA6769D42D48 /* Pods-DOUASDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D43ACD731738B47B00E6A571 /* DOUAudioStreamer */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +213,7 @@
 				D4C38928171B9D87009D6124 /* DOUASDemo */,
 				D4C38921171B9D87009D6124 /* Frameworks */,
 				D4C38920171B9D87009D6124 /* Products */,
-				E98624A7F6B9863537C1F90B /* Pods */,
+				87DBB5999BA7911BBC9470DF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,7 +240,7 @@
 				D4C38922171B9D87009D6124 /* UIKit.framework */,
 				D4C38924171B9D87009D6124 /* Foundation.framework */,
 				D4C38926171B9D87009D6124 /* CoreGraphics.framework */,
-				E867FD47114F56D107B5D362 /* libPods.a */,
+				2204C16CF1058B3BA26C03CF /* libPods-DOUASDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,15 +278,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E98624A7F6B9863537C1F90B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				202071D0A5CC7425BB1F458B /* Pods.debug.xcconfig */,
-				73C378FE9FD40A889C92E4B9 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,12 +285,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4C38942171B9D87009D6124 /* Build configuration list for PBXNativeTarget "DOUASDemo" */;
 			buildPhases = (
-				269340FF0EDD834E08D2DCCD /* Check Pods Manifest.lock */,
+				E9D86E106D5615B351A80429 /* [CP] Check Pods Manifest.lock */,
 				D4C3891B171B9D87009D6124 /* Sources */,
 				D4C3891C171B9D87009D6124 /* Frameworks */,
 				D4C3891D171B9D87009D6124 /* Resources */,
-				C695F6F28FCFB711704D15EF /* Embed Pods Frameworks */,
-				662123195899F7DBC6915FF6 /* Copy Pods Resources */,
+				8F56067F2A082F348AFE88F8 /* [CP] Embed Pods Frameworks */,
+				A0323A90FDD8BA14C3CBBFAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,6 +309,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Douban Inc.";
+				TargetAttributes = {
+					D4C3891E171B9D87009D6124 = {
+						DevelopmentTeam = 5DS6P2KWFQ;
+					};
+				};
 			};
 			buildConfigurationList = D4C3891A171B9D87009D6124 /* Build configuration list for PBXProject "DOUASDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -342,49 +347,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		269340FF0EDD834E08D2DCCD /* Check Pods Manifest.lock */ = {
+		8F56067F2A082F348AFE88F8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DOUASDemo/Pods-DOUASDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		662123195899F7DBC6915FF6 /* Copy Pods Resources */ = {
+		A0323A90FDD8BA14C3CBBFAF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DOUASDemo/Pods-DOUASDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C695F6F28FCFB711704D15EF /* Embed Pods Frameworks */ = {
+		E9D86E106D5615B351A80429 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -501,9 +506,10 @@
 		};
 		D4C38943171B9D87009D6124 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 202071D0A5CC7425BB1F458B /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 67249840147EDE8F074B1FF6 /* Pods-DOUASDemo.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 5DS6P2KWFQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DOUASDemo/DOUASDemo-Prefix.pch";
 				INFOPLIST_FILE = "DOUASDemo/DOUASDemo-Info.plist";
@@ -515,9 +521,10 @@
 		};
 		D4C38944171B9D87009D6124 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73C378FE9FD40A889C92E4B9 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 07B6D4942415BA6769D42D48 /* Pods-DOUASDemo.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 5DS6P2KWFQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DOUASDemo/DOUASDemo-Prefix.pch";
 				INFOPLIST_FILE = "DOUASDemo/DOUASDemo-Info.plist";

@@ -154,7 +154,7 @@
                                                                             URLString:_url.absoluteString
                                                                            parameters:nil
                                                                                 error:NULL];
-  [request setValue:@"mr7.doubanio.com" forHTTPHeaderField:@"Host"];
+//  [request setValue:@"mr7.doubanio.com" forHTTPHeaderField:@"Host"];
   typeof(self) __weak wself = self;
   _task = [_sessionManager dataTaskWithRequest:request
                                 uploadProgress:NULL

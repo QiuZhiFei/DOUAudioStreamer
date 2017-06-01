@@ -39,7 +39,7 @@
     Track *track = [[Track alloc] init];
     [track setArtist:@"artist"];
     [track setTitle:@"title"];
-    [track setAudioFileURL:[NSURL URLWithString:@"http://douban.fm/misc/mp3url?domain=mr7"]];
+    [track setAudioFileURL:[NSURL URLWithString:@"http://mr3.doubanio.com/42bbb5f6676c461e7ebda0473b2c640e/3/fm/song/p1809535_128k.mp4"]];
     tracks = @[track];
   });
   

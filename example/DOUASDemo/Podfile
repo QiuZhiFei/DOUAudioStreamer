@@ -1,5 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
 
-pod 'AFNetworking', '~> 3.0'
+target 'DOUASDemo' do 
+	pod 'AFNetworking', '~> 3.0'
+end
+
+
 #pod 'JBASIHTTPRequest', '~> 2.1'
