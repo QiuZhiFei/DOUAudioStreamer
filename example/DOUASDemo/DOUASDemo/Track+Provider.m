@@ -39,7 +39,9 @@
     Track *track = [[Track alloc] init];
     [track setArtist:@"artist"];
     [track setTitle:@"title"];
-    [track setAudioFileURL:[NSURL URLWithString:@"http://mr3.doubanio.com/42bbb5f6676c461e7ebda0473b2c640e/3/fm/song/p1809535_128k.mp4"]];
+    [track setAudioFileURL:[NSURL URLWithString:@"http://mr1.doubanio.com/a57ab55464becbd28344a8cbfc0260ab/0/fm/song/p365083_128k.mp4"]];
+//    [track setAudioFileURL:[NSURL URLWithString:@"http://mr3.doubanio.com/10824062c777c279201f558a90679a8e/0/fm/song/p1382367_128k.mp4"]];
+    
     tracks = @[track];
   });
   
