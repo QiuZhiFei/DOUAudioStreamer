@@ -39,7 +39,7 @@
     Track *track = [[Track alloc] init];
     [track setArtist:@"Prince's Band"];
     [track setTitle:@"All America March (1916 recording)"];
-    [track setAudioFileURL:[NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/commons/6/64/All_America_march_%281916_recording%29.mp3"]];
+    [track setAudioFileURL:[NSURL URLWithString:@"https://github.com/qiuzhifei/DOUAudioStreamer/raw/master/example/DOUASDemo/DOUASDemo/All_America_march_1916_recording.mp3"]];
 
     tracks = @[track];
   });
